@@ -7,7 +7,7 @@ function PatientList() {
     const getPatients=async()=>{
         const results=await axios.get('/patient');
         setPatientList(results.data);
-        console.log(results);
+        //console.log(results);
     }
 
     useEffect(()=>{

@@ -3,6 +3,7 @@ const asyncHandler=require('express-async-handler');
 
 const getPatients=asyncHandler(async (req, res)=>{
     const result=await Patient.find().lean();
+    console.log("API HAS BEEN CALLED")
     res.status(200).json(result);
 })
 const getPatient=asyncHandler(async (req, res)=>{
@@ -24,11 +25,13 @@ const postPatient= asyncHandler(async (req, res)=>{
     zip,
     DOB,
     mobilePhone,
-    phone
+    phone,
+    gender
 }= req.body;
 const patient=await Patient.find({patientTZ});
-if(patient){
-    res.sendStatus(409);
+console.log(patient);
+if(patient.length>0){
+    return res.sendStatus(409);
 }
 
 const result=await Patient.create({
@@ -42,7 +45,8 @@ const result=await Patient.create({
     zip,
     DOB,
     mobilePhone,
-    phone
+    phone,
+    gender
 })
     console.log(req.body);
      res.end(`name ${firstName} last ${lastName} ${phone}`);
@@ -60,7 +64,8 @@ const updatePatient=asyncHandler(async( req, res)=>{
         zip,
         DOB,
         mobilePhone,
-        phone
+        phone,
+        gender
     }= req.body;
     const result= await Patient.updateOne({
         "_id": id
@@ -76,7 +81,8 @@ const updatePatient=asyncHandler(async( req, res)=>{
             zip,
             DOB,
             mobilePhone,
-            phone
+            phone,
+            gender
         }
     );
     res.status(200).json(result);
@@ -88,8 +94,25 @@ const deletePatient=asyncHandler(async (req, res)=>{
     res.status(200).json(result);
 });
 
+const addInfectionDate=asyncHandler(async(req, res)=>{
+    const {patientID, date}=req.body;
+    const result=await Patient.updateOne({_id: patientID}, {infectionDate:date});
+    res.json(result);
+
+
+
+
+});
+const addRecoveryDate=asyncHandler(async(req, res)=>{
+    const {patientID, date}=req.body;
+    const result=await Patient.updateOne({_id: patientID}, {recoveryDate:date});
+    res.json(result);
+
+
+})
+
 module.exports={
-    getPatients, getPatient,postPatient,deletePatient,updatePatient
+    getPatients, getPatient,postPatient,deletePatient,updatePatient, addInfectionDate, addRecoveryDate
 }
 
 

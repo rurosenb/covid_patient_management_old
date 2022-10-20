@@ -15,6 +15,9 @@ app.use(cors());
 
 connectDB();
 
+
+
+app.use("/vaccine", require('./routes/vaccine'));
 app.use('/patient', require('./routes/patient'));
 //app.get('/hi', (req, res)=> res.end("Hi"));
 

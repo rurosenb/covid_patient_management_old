@@ -51,62 +51,16 @@ const patientSchema=new mongoose.Schema(
             enum: ["male", "female", "other"],
             default: 'male'
         },
-        firstVaccination:{
-            required: false,
-           date: {
-            type: Date,
-            required: false
-           },
-           manufacturer:{
-            type: String,
-            enum: ['Pfizer', 'moderna', 'jj'],
-            default: 'Pfizer'
-           }
-        },
-        secondVaccination:{
-            required: false,
-            date: {
-             type: Date,
-             required: false
-            },
-            manufacturer:{
-             type: String,
-             enum: ['Pfizer', 'moderna', 'jj'],
-             default: 'Pfizer'
-            }
-         },
-         thirdVaccination:{
-            required: false,
-            date: {
-             type: Date,
-             required: false
-            },
-            manufacturer:{
-             type: String,
-             enum: ['Pfizer', 'moderna', 'jj'],
-             default: 'Pfizer'
-            }
-         },
-         fourthVaccination:{
-            required: false,
-            date: {
-             type: Date,
-             required: false
-            },
-            manufacturer:{
-             type: String,
-             enum: ['Pfizer', 'moderna', 'jj'],
-             default: 'Pfizer'
-            }
-         },
         infectionDate:{
+            type:Date,
+            required: false
+        },
+        recoveryDate:{
             type: Date,
             required:false
-         },
-         recoveryDate:{
-            type: Date,
-            required:false
-         }
+        }
+       
+       
     },
     {timestamps:true}
 );

@@ -1,4 +1,5 @@
 const router=require('express').Router();
+
 const vaccineControler=require('../controllers/vaccineController');
 
 router.route("/")
@@ -7,5 +8,6 @@ router.route("/")
 .delete();
 
 router.get("/:id",vaccineControler.getVaccineDetails);
+
 
 module.exports=router;

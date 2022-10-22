@@ -1,6 +1,7 @@
 import React from 'react'
 import axios from '../../apis/axios'
 import { useNavigate, Link  } from 'react-router-dom';
+import '../../css/index.css'
 
 
 const PatientListItem = ({item, callback}) => {
@@ -20,17 +21,16 @@ const PatientListItem = ({item, callback}) => {
     }
 
   return (
-  <table class="table">
+  <table className="table">
 
   <tbody>
-  <tr key={item._id}>
-  <th scope="row"></th>
-    <Link to={`/viewpatient/${item._id}`}>
-    <td>{item.firstName} {item.lastName}</td>
-    </Link>
-    <td><button onClick={()=>editPatient(item)}>Edit Patient</button></td>
-   
-     <td><button onClick={()=>deletePatient(item)}>Delete</button></td>
+
+  <tr align= "center" key={item._id}>
+    
+      <td className='tdthird'> <Link to={`/viewpatient/${item._id}`}>
+      {item.firstName} {item.lastName} </Link></td> 
+      <td className='tdthird'><button className="btn btn-secondary btn-lg" onClick={()=>editPatient(item)}>Edit Patient</button> <button className="btn btn-secondary btn-lg" onClick={()=>deletePatient(item)}>Delete</button></td>
+     
      </tr>
      </tbody>
      </table>

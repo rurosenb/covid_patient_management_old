@@ -3,7 +3,6 @@ const asyncHandler=require('express-async-handler');
 
 const getPatients=asyncHandler(async (req, res)=>{
     const result=await Patient.find().lean();
-    console.log("API HAS BEEN CALLED")
     res.status(200).json(result);
 })
 const getPatient=asyncHandler(async (req, res)=>{
@@ -27,12 +26,12 @@ const postPatient= asyncHandler(async (req, res)=>{
     mobilePhone,
     phone,
     gender
-}= req.body;
-const patient=await Patient.find({patientTZ});
-console.log(patient);
-if(patient.length>0){
-    return res.sendStatus(409);
-}
+    }= req.body;
+    const patient=await Patient.find({patientTZ});
+    console.log(patient);
+    if(patient.length>0){
+        return res.sendStatus(409);
+    }
 
 const result=await Patient.create({
     firstName,
@@ -48,8 +47,8 @@ const result=await Patient.create({
     phone,
     gender
 })
-    console.log(req.body);
-     res.end(`name ${firstName} last ${lastName} ${phone}`);
+   
+     res.json({status: "Success"})
 });
 const updatePatient=asyncHandler(async( req, res)=>{
     const { 

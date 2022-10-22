@@ -13,7 +13,7 @@ const AppNavBar = () => {
     <>
    <NavBar bg="dark" variant="dark" expand="lg">
     <Container>
-        <NavBar.Brand href="#home">Covid Patient Manager</NavBar.Brand>
+        <NavBar.Brand >Covid Patient Manager</NavBar.Brand>
         {/* <NavBar.Toggle aria-controls='basic-navbar-nav'/> */}
         <NavBar.Collapse id='basic-navbar-nav'>
         <Nav className="me-auto">

@@ -42,9 +42,9 @@ const AddEditVaccine = ({patient, id}) => {
             <td>{formatedDate}</td>
            
             </tr>)})}
-       <td> <button disabled={vaccines.length>3}  onClick={()=>setShowModal(true)} >Add Vaccine</button> </td>
-       <td> <button disabled={patient.infectionDate!=null}  onClick={()=>setShowModalI(true)} >Add Infection Date</button></td>
-       <td> <button disabled={patient.recoveryDate!=null}  onClick={()=>setShowModalR(true)} >Add Recovery Date</button></td>
+       <td> <button class="btn btn-secondary btn-lg" disabled={vaccines.length>3}  onClick={()=>setShowModal(true)} >Add Vaccine</button> </td>
+       <td> <button class="btn btn-secondary btn-lg" disabled={patient.infectionDate!=null}  onClick={()=>setShowModalI(true)} >Add Infection Date</button></td>
+       <td> <button class="btn btn-secondary btn-lg" disabled={patient.recoveryDate!=null}  onClick={()=>setShowModalR(true)} >Add Recovery Date</button></td>
        </tbody>
     </table>
     </>

@@ -15,12 +15,11 @@ app.use(cors());
 
 connectDB();
 
+const onConnect=()=>{console.log('Server running');}
 
 
 app.use("/vaccine", require('./routes/vaccine'));
 app.use('/patient', require('./routes/patient'));
 //app.get('/hi', (req, res)=> res.end("Hi"));
 
-app.listen(3500, ()=>{
-    console.log('Server running');
-})
+app.listen(3500,  onConnect);

@@ -28,7 +28,7 @@ if (!showModalI) return null;
              <form>
                 <input type='date' value={infectionDate} onChange={(event)=>setinfectionDate(event.target.value)}/>
                 <div className='btnContainer'>
-              <button className='btnPrimary' onClick={submitInfection}>
+              <button class="btn btn-secondary btn-lg" className='btnPrimary' onClick={submitInfection}>
                 <span className='bold'>Submit</span>
               </button>
              

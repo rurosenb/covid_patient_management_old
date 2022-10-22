@@ -6,6 +6,7 @@ const HomePage = () => {
 
     <div>
         <AppNavBar/>
+        <center><h1>Welcome</h1></center>
     </div>
   )
 }

@@ -36,14 +36,18 @@ function PatientList() {
   return (
     <div>
         <AppNavBar/>
+
+      <div class="container1">
+
         {patientList.map((patient)=>{
             return (<div>
-                <table>
+                
                <PatientListItem item={patient} callback={getPatients}/> 
-               </table>
             </div>);
         } )}
     </div>
+    </div>
+
   )
 }
 

@@ -32,8 +32,11 @@ const ViewPatient = () => {
             }
           
   return (
-    <>
+    <div>
     <AppNavBar/>
+    <div class="row">
+     <div class="col-75">
+      <div class="container1">
         {patientInfo.firstName + " " + patientInfo.lastName} <br/>
         {patientInfo.street + " " + patientInfo.houseNumber + " APT: "+ patientInfo.apartmentNumber} <br/>
         
@@ -45,9 +48,10 @@ const ViewPatient = () => {
         
         
        <AddEditVaccine patient={patientInfo} id={id}/>
-    </>
-   
-    
+   </div>
+   </div>
+   </div>
+    </div>
   )
 }
 

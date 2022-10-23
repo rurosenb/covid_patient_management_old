@@ -4,23 +4,22 @@
 * [Technologies](#technologies)
 * [Setup](#setup)
 ## General info
-This project is simple Lorem ipsum dolor generator.
- 
+This project is covid vaccination tracking system for healthcare professionals. 
  
 ### creating new patient 
 ![image](https://user-images.githubusercontent.com/80812161/197390561-a53d935b-d28b-4dd9-a8d5-494ddab5bc75.png)
 ## Technologies
 Project is created with:
 * Server
-  * Node(.js) - the premier JavaScript web server
-  * Express(.js) - Node.js web framework
-  * jSON Web Token -a lightweight format for storing and transporting data
+  * Node(.js)
+  * Express(.js)
+  * JSON
 * Client
-  * React - a client-side JavaScript framework
+  * React
   * react-router-dom
   * axios
 * Databases
-  * MongoDb
+  * MongoDb/Mongoose
 	
 ## Setup
 To run this project, install it locally using npm:
